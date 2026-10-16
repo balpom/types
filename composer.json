@@ -1,0 +1,21 @@
+{
+    "name": "balpom/types",
+    "description": "Library for PHP type checking and type casting.",
+    "type": "library",
+    "homepage": "https://www.balpom.ru",
+    "license": "MIT",
+    "keywords": ["types", "checking", "casting", "type", "cast", "check", "variable", "property", "php", "array", "string", "bool", "true", "false", "int", "integer", "null", "object", "resource", "void", "value", "enabled", "disabled"],
+    "autoload": {
+        "psr-4": {
+            "Balpom\\Types\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mikhail (Balpom)"
+        }
+    ],
+    "require": {
+        "php": ">=8.2"
+    }
+}
