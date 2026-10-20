@@ -8,6 +8,15 @@ class IntType extends AbstractType
 {
     protected array $enabledTypes = [Stringable::class, 'string', 'integer', 'int'];
 
+    public function isValid(mixed $value = null): bool
+    {
+        if (!is_numeric($value)) {
+            return false;
+        }
+
+        return $this->isEnabledType($value);
+    }
+
     protected function coerce(mixed $value): mixed
     {
         if (is_int($value)) {
@@ -32,6 +41,9 @@ class IntType extends AbstractType
             $value = $sign * $value;
         } else {
             throw new TypeException('Unable to coerce STRING to INTEGER for given string value.');
+        }
+        if (empty($value)) { // '-0.000000' returns -0 as double PHP type.
+            $value = 0;
         }
 
         return $value;

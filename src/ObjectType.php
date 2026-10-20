@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Balpom\Types;
 
-class MixedType extends AbstractType
+class ObjectType extends AbstractType
 {
-    protected array $enabledTypes = ['null', 'bool', 'int', 'float', 'double', 'string', 'array', 'object', 'resource'];
+    protected array $enabledTypes = ['object'];
 
 }

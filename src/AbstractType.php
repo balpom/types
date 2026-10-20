@@ -22,6 +22,14 @@ abstract class AbstractType implements TypeInterface
     }
 
     /*
+     * Default check value method.
+     */
+    public function isValid(mixed $value = null): bool
+    {
+        return $this->isEnabledType($value);
+    }
+
+    /*
      * Default coerce type method.
      * Simple return given value.
      */
@@ -56,7 +64,6 @@ abstract class AbstractType implements TypeInterface
 
     protected function isEnabledType(mixed $value): bool
     {
-
         if (is_object($value)) {
             $type = get_class($value);
             if (!isset($this->types[$type])) {

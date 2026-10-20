@@ -11,4 +11,9 @@ interface TypeInterface
      */
     public function value(mixed $value = null): mixed;
 
+    /*
+     * Check value.
+     */
+    public function isValid(mixed $value = null): bool;
+
 }

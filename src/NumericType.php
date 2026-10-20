@@ -10,6 +10,15 @@ class NumericType extends AbstractType
 {
     protected array $enabledTypes = [Stringable::class, 'string', 'integer', 'int', 'float', 'double'];
 
+    public function isValid(mixed $value = null): bool
+    {
+        if (!is_numeric($value)) {
+            return false;
+        }
+
+        return $this->isEnabledType($value);
+    }
+
     protected function coerce(mixed $value): mixed
     {
         if (is_int($value) || is_float($value)) {

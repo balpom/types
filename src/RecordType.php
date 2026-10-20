@@ -14,6 +14,11 @@ class RecordType extends AbstractType
 {
     protected array $enabledTypes = ['array'];
 
+    public function isValid(mixed $value = null): bool
+    {
+        return $this->isRecord($value);
+    }
+
     protected function coerce(mixed $value): mixed
     {
         $result = [];
