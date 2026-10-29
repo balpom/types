@@ -24,6 +24,8 @@ class IntType extends AbstractType
         }
 
         $value = trim($value);
+        $value = rtrim($value, '0');
+        $value = rtrim($value, '.');
         $sign = 1;
         if (1 < strlen($value)) {
             $first = substr($value, 0, 1);

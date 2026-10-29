@@ -12,10 +12,10 @@ class StringOrIntType extends AbstractType
 
     protected function coerce(mixed $value): mixed
     {
-        if (is_int($value)) {
+        if (is_string($value)) {
             return $value;
         }
-        if (is_string($value)) {
+        if (is_int($value)) {
             return $value;
         }
 
