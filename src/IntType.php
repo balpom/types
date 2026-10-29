@@ -6,7 +6,7 @@ namespace Balpom\Types;
 
 class IntType extends AbstractType
 {
-    protected array $enabledTypes = [Stringable::class, 'string', 'integer', 'int'];
+    protected array $enabledTypes = [Stringable::class, 'string', 'integer', 'int', 'double'];
 
     public function isValid(mixed $value = null): bool
     {
@@ -21,6 +21,10 @@ class IntType extends AbstractType
     {
         if (is_int($value)) {
             return $value;
+        }
+
+        if (is_float($value)) {
+            $value = (string) $value;
         }
 
         $value = trim($value);
